@@ -10,8 +10,8 @@
 //   document.write(i, ' ');
 
 // const randomColor = () => Math.floor(Math.random() * 255);
-const catPicture =
-  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.washingtonian.com%2Fwp-content%2Fuploads%2F2019%2F02%2Fmilada-vigerova-1295750-unsplash-2048x3072.jpg&f=1&nofb=1";
+// const catPicture =
+//   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.washingtonian.com%2Fwp-content%2Fuploads%2F2019%2F02%2Fmilada-vigerova-1295750-unsplash-2048x3072.jpg&f=1&nofb=1";
 
 // const titleElement = document.createElement('title');
 // titleElement.innerHTML = 'DOM API';
@@ -20,9 +20,9 @@ const catPicture =
 // const h1Element = document.createElement('h1');
 // h1Element.innerHTML = '123';
 
-const imgElement = document.createElement("img");
-imgElement.setAttribute("src", catPicture);
-imgElement.classList = "box";
+// const imgElement = document.createElement("img");
+// imgElement.setAttribute("src", catPicture);
+// imgElement.classList = "box";
 // document.body.appendChild(imgElement);
 
 // const divElement = document.createElement('div');
@@ -62,12 +62,46 @@ imgElement.classList = "box";
 // divElement.classList.toggle("random-class-name");
 // console.log(divElement.classList);
 
-const container = document.createElement("div");
+// const container = document.createElement("div");
 
-const otherContainer = document.createElement("div");
+// const otherContainer = document.createElement("div");
 
-otherContainer.appendChild(imgElement);
+// otherContainer.appendChild(imgElement);
 
-container.appendChild(otherContainer);
+// container.appendChild(otherContainer);
 
-document.body.appendChild(container);
+// document.body.appendChild(container);
+// const buttonOnClick = (event) => {
+//   console.log({ event });
+// const inputElement = document.getElementById("some-input");
+// console.log(inputElement.value);
+// };
+
+// https://developer.mozilla.org/en-US/docs/Web/Events
+
+// document.getElementById("some-button").addEventListener("click", buttonOnClick);
+document.getElementById("some-input").addEventListener("keydown", (event) => {
+  // console.log({ event });
+  if (event.keyCode == 66) {
+    event.preventDefault();
+    // document.getElementById("some-div").innerHTML = "b";
+    // document.getElementById("some-input") === event.target
+    document.getElementById("some-input").value = "b";
+  }
+});
+
+const button = document.getElementById("some-button");
+
+button.addEventListener("mouseover", (event) => {
+  const someElement = document.createElement("div");
+  someElement.innerHTML = "hover";
+  document.body.appendChild(someElement);
+});
+
+document
+  .getElementById("some-button")
+  .addEventListener("mouseleave", (event) => {
+    const someElement = document.createElement("div");
+    someElement.innerHTML = "out";
+    document.body.appendChild(someElement);
+  });
